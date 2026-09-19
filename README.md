@@ -1,10 +1,10 @@
-# Alpsanto Blog-Inhalte
+# Alpsanto Blog — öffentliches Source-Repository
 
-Dieses öffentliche Repository enthält ausschließlich freigegebene, veröffentlichte Markdown-Artikel für [blog.alpsanto.com](https://blog.alpsanto.com). Es enthält keine Entwürfe, Zugangsdaten oder automatisch erzeugten Beispielbeiträge. Der Blog kann bis zum ersten freigegebenen Artikel leer sein.
+Dieses Repository enthält die öffentlichen Markdown-Quellen und Bilder des Alpsanto-Blogs. Die einzige primäre Publishing- und SEO-Version erscheint auf [blog.alpsanto.com](https://blog.alpsanto.com). Artikelquellen und Content-PRs dürfen hier bereits vor dem Website-Release sichtbar sein. Rohimporte, interne Notizen und Zugangsdaten gehören nicht hierher. Die Website veröffentlicht nur separat freigegebene Artikelversionen.
 
 ## Aufbau
 
-- `articles/<slug>.md`: ein veröffentlichter Artikel pro Datei. Der Dateiname entspricht dem stabilen `slug` im Frontmatter.
+- `articles/<slug>.md`: eine öffentliche Artikelquelle pro Datei. Der Dateiname entspricht dem stabilen `slug` im Frontmatter.
 - `images/<slug>/...`: lokal gespeicherte Bilder eines Artikels. Bildnamen sind klein geschrieben und enthalten keine Leerzeichen. Der Website-Build kopiert sie nach `/images/blog/<slug>/...`; im Markdown werden sie als `/images/blog/<slug>/<datei>` referenziert.
 - Veröffentlichte Bilder liegen ausschließlich lokal unter `images/<slug>/`. Bildrechte und Alt-Texte sind vor Veröffentlichung zu prüfen. Externe Bild-URLs aus Importen sind nur Hinweise für eine spätere, geprüfte Übernahme und dürfen nicht direkt als Artikelbild veröffentlicht werden.
 
@@ -25,10 +25,10 @@ Jede Datei beginnt mit YAML-Frontmatter zwischen zwei `---`-Zeilen. Erforderlich
 | `author` | Freigegebener sichtbarer Autorenname; nicht aus einer Quelle erraten. |
 | `tags` | Liste von Zeichenfolgen; leere Liste ist erlaubt. |
 | `image` | Optionaler absoluter Website-Pfad unter `/images/blog/<slug>/` zu einer lokalen Rasterdatei (`.png`, `.jpg`, `.jpeg`, `.webp` oder `.avif`). |
-| `draft` | Boolean; in diesem öffentlichen Repository immer `false`. |
+| `draft` | Boolean; `true` ist eine öffentlich sichtbare Vorab-Fassung, die nicht auf der Website erscheint. |
 
 Vor einem Commit: Angaben und Rechte prüfen, Roh-HTML und ausführbare Links aus Markdown entfernen, Bilddateien mit einchecken und `id` sowie `slug` auf Kollisionen prüfen. Ein späterer privater Import nach der [Outrank-Dokumentation](https://www.outrank.so/docs/webhook) erzeugt zunächst nur Kandidaten für eine getrennte redaktionelle Prüfung.
 
 ## Artikelverzeichnis
 
-Noch keine Artikel veröffentlicht. Neue Artikel werden hier mit Titel, Markdown-Datei und Blog-URL verlinkt.
+Noch keine Artikelquellen eingestellt. Markdown bleibt eine schlanke Inhaltsquelle ohne zusätzliche SEO-Texte oder Keyword-Blöcke; die Website erzeugt Metadaten und Self-Canonicals.
